@@ -77,7 +77,7 @@ var AmplitudeHelpers = (function () {
 			/*
 				Build the callback function
 			*/
-			var callbackFunction = window[ config.callbacks[ callbackName ] ];
+			var callbackFunction = config.callbacks[ callbackName ];
 			
 			/*
 				Write a debug message stating the callback we are running
@@ -88,7 +88,7 @@ var AmplitudeHelpers = (function () {
 				Run the callback function.
 			*/
             try {
-                callbackFunction();
+                callbackFunction( config );
             }
             catch(error) {
                 // undocumented way to cancel events
